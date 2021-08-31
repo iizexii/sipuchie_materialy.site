@@ -25,6 +25,8 @@
 	--orange-40: rgba(218, 158, 50, 0.4);
 	--orange-60: rgba(218, 158, 50, 0.6);
 	--orange-80: rgba(218, 158, 50, 0.8);
+	--fz-title: 35px;
+	--fz-descr: 18px;
 	@media (max-width: 1199px) {
 		--block-width: 1024px;
 	}
@@ -33,6 +35,14 @@
 	}
 	@media (max-width: 991px) {
 		--block-width: 100%;
+		--fz-title: 30px;
+		--fz-descr: 16px;
+	}
+	@media (max-width: 767px) {
+		--fz-title: 25px;
+	}
+	@media (max-width: 480px) {
+		--fz-title: 24px;
 	}
 }
 
@@ -121,7 +131,7 @@ body.noscroll {
 }
 
 .description {
-	font-size: 18px;
+	font-size: var(--fz-descr);
 	font-family: var(--f-montserrat);
 	color: var(--black-1f);
 	font-weight: 900;
@@ -145,6 +155,10 @@ body.noscroll {
 	@media (max-width: 1024px) {
 		padding: 13px 20px;
 		font-size: 14px;
+	}
+	@media (max-width: 767px) {
+		padding: 10px 18px;
+		font-size: 13px;
 	}
 }
 
@@ -170,6 +184,9 @@ body.noscroll {
 		z-index: 10;
 		width: 100%;
 		max-width: 50%;
+		@media (max-width: 767px) {
+			min-width: 85%;
+		}
 	}
 
 	&__text-header {
@@ -182,6 +199,14 @@ body.noscroll {
 		}
 		@media (max-width: 991px) {
 			font-size: 30px;
+		}
+		@media (max-width: 767px) {
+			font-size: 25px;
+			font-weight: 500;
+			margin-bottom: 0;
+		}
+		@media (max-width: 480px) {
+			font-size: 23px;
 		}
 	}
 
@@ -201,6 +226,9 @@ body.noscroll {
 		}
 		@media (max-width: 991px) {
 			font-size: 14px;
+		}
+		@media (max-width: 640px) {
+			margin-bottom: 10px;
 		}
 	}
 
@@ -236,12 +264,9 @@ body.noscroll {
 	&__title {
 		text-align: center;
 		padding: 50px 0 0;
-		font-size: 35px;
+		font-size: var(--fz-title);
 		position: relative;
 		margin-bottom: 0;
-		@media (max-width: 991px) {
-			font-size: 30px;
-		}
 	}
 
 	&__title::before {
@@ -259,13 +284,10 @@ body.noscroll {
 		text-align: center;
 		font-family: var(--f-montserrat);
 		color: var(--black-1f);
-		font-size: 18px;
+		font-size: var(--fz-descr);
 		line-height: 1.4;
 		padding-bottom: 50px;
 		font-weight: normal;
-		@media (max-width: 991px) {
-			font-size: 16px;
-		}
 	}
 
 	&__wrapper {
@@ -282,6 +304,9 @@ body.noscroll {
 		@media (max-width: 991px) {
 			width: 50%;
 		}
+		@media (max-width: 640px) {
+			width: 100%;
+		}
 	}
 
 	&__elem {
@@ -293,6 +318,9 @@ body.noscroll {
 		padding-bottom: 40px;
 		transition: ease-in-out 0.2s;
 		height: 100%;
+		@media (max-width: 640px) {
+			padding-bottom: 20px;
+		}
 	}
 
 	&__elem:hover {

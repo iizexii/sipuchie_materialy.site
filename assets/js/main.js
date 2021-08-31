@@ -15,6 +15,14 @@ $(document).ready(function () {
 		arrows: true,
 		prevArrow: '<span class="slick-prev"><img src="img/chevron-right_grey_grey.svg" alt="prev"></span>',
 		nextArrow: '<span class="slick-next"><img src="img/chevron-right_grey_grey.svg" alt="next"></span>',
+		responsive: [
+			{
+				breakpoint: 640,
+				settings: {
+					dots: false
+				}
+			},
+		]
 	});
 
 	$('body').on('click', 'input[type="tel"]', function () {

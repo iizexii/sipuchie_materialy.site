@@ -25,18 +25,18 @@
 				width: 100%;
 				display: inline-flex;
 				justify-content: center;
+				text-align: center;
 			}
 		}
 	}
 
 	&__form-name {
-		font-size: 35px;
+		font-size: var(--fz-title);
 		margin-bottom: 30px;
 		padding-bottom: 50px;
 		position: relative;
 		@media (max-width: 991px) {
 			margin-bottom: 0;
-			font-size: 30px;
 		}
 	}
 
@@ -202,12 +202,18 @@
 		@media (max-width: 991px) {
 			align-items: center;
 			justify-content: center;
+			text-align: center;
 		}
 	}
 
 	&__copyright-block:last-of-type &__copyright-item {
 		align-items: flex-end;
 		text-align: right;
+		@media (max-width: 991px) {
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
 	}
 
 	&__copyright-item a {
