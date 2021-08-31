@@ -1,8 +1,8 @@
 // document.addEventListener('DOMContentLoaded', () => {
 // });
 $(document).ready(() => {
-	$("body #header").load("/header.html");
-	$("body #footer").load("/footer.html");
+	$("body #header").load("header.html");
+	$("body #footer").load("footer.html");
 
 	$('.main-slider').slick({
 		autoplay: true,
@@ -15,8 +15,8 @@ $(document).ready(() => {
 		dots: true,
 		dotsClass: "slick-dots",
 		arrows: true,
-		prevArrow: '<span class="slick-prev"><img src="/img/chevron-right_grey_grey.svg" alt="prev"></span>',
-		nextArrow: '<span class="slick-next"><img src="/img/chevron-right_grey_grey.svg" alt="next"></span>',
+		prevArrow: '<span class="slick-prev"><img src="img/chevron-right_grey_grey.svg" alt="prev"></span>',
+		nextArrow: '<span class="slick-next"><img src="img/chevron-right_grey_grey.svg" alt="next"></span>',
 	});
 
 	$('body').on('click', 'input[type="tel"]', function () {
