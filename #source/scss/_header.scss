@@ -4,12 +4,23 @@
 	justify-content: space-between;
 	padding: 50px 30px;
 	margin: 0 auto;
+	@media (max-width: 991px) {
+		padding: 40px 10px;
+	}
 
 	&__block {
 		display: flex;
+		@media (max-width: 991px) {
+			width: 100%;
+			justify-content: space-between;
+		}
 	}
+
 	&__block:first-of-type {
 		flex-direction: column;
+		@media (max-width: 991px) {
+			align-items: center;
+		}
 	}
 
 	&__name {
@@ -18,6 +29,9 @@
 		color: var(--light-black);
 		font-weight: 900;
 		line-height: 1.2;
+		@media (max-width: 991px) {
+			font-size: 30px;
+		}
 	}
 
 	&__description {
@@ -34,6 +48,15 @@
 		flex-direction: column;
 		align-items: flex-end;
 		padding: 25px 0 0 30px;
+		@media (max-width: 991px) {
+			padding: 15px 20px 0;
+		}
+	}
+
+	&__adv-block:first-of-type {
+		@media (max-width: 991px) {
+			align-items: flex-start;
+		}
 	}
 
 	&__block-top-p {
@@ -43,6 +66,9 @@
 		color: var(--grey-06);
 		margin-bottom: 7px;
 		line-height: 1.2;
+		@media (max-width: 991px) {
+			margin-bottom: 8px;
+		}
 	}
 
 	&__block-bottom-p {
@@ -52,6 +78,9 @@
 		font-weight: 900;
 		font-style: normal;
 		line-height: 1.2;
+		@media (max-width: 991px) {
+			line-height: 1;
+		}
 	}
 
 	&__phone-link {
@@ -67,7 +96,11 @@
 		transition: ease-in-out 0.2s;
 	}
 }
-
+.sticky {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+}
 .header-menu {
 	background-color: var(--black);
 	width: 100%;
@@ -75,7 +108,12 @@
 	justify-content: center;
 
 	@media (max-width: 991px) {
-		display: none;
+		position: absolute;
+		top: 0;
+		right: -100vw;
+		width: 100vw;
+		height: 100vh;
+		z-index: 1;
 	}
 
 	&__wrapper {
@@ -152,5 +190,57 @@
 		background: var(--black);
 		color: #fff;
 		transition: ease-in-out 0.05s;
+	}
+}
+
+.nav {
+	display: none;
+
+	@media (max-width: 991px) {
+		display: flex;
+		width: 60px;
+		height: 60px;
+		padding: 10px;
+		position: fixed;
+		right: 0;
+		top: 0;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		z-index: 11;
+		cursor: pointer;
+		background-color: var(--orange);
+	}
+
+	&_active > &__line {
+		@media (max-width: 991px) {
+			&:nth-child(1) {
+				position: absolute;
+				transform: rotate(-45deg) translate(0px, -50%);
+				transition: all 0.3s ease 0s;
+				top: 60%;
+				left: 40%;
+				width: 40%;
+			}
+			&:nth-child(2) {
+				width: 0;
+			}
+			&:nth-child(3) {
+				position: absolute;
+				transform: rotate(45deg) translate(0px, 50%);
+				transition: all 0.3s ease 0s;
+				bottom: 60%;
+				left: 40%;
+				width: 40%;
+			}
+		}
+	}
+
+	&__line {
+		width: 80%;
+		margin: 3px auto;
+		height: 5%;
+		background-color: var(--light-black);
+		transition: all 0.3s ease 0s;
 	}
 }

@@ -31,6 +31,9 @@
 	@media (max-width: 1024px) {
 		--block-width: 991px;
 	}
+	@media (max-width: 991px) {
+		--block-width: 100%;
+	}
 }
 
 html {
@@ -171,6 +174,9 @@ body {
 		@media (max-width: 1024px) {
 			font-size: 35px;
 		}
+		@media (max-width: 991px) {
+			font-size: 30px;
+		}
 	}
 
 	&__text-description {
@@ -186,6 +192,9 @@ body {
 		letter-spacing: 1px;
 		@media (max-width: 1024px) {
 			font-size: 16px;
+		}
+		@media (max-width: 991px) {
+			font-size: 14px;
 		}
 	}
 
@@ -224,6 +233,9 @@ body {
 		font-size: 35px;
 		position: relative;
 		margin-bottom: 0;
+		@media (max-width: 991px) {
+			font-size: 30px;
+		}
 	}
 
 	&__title::before {
@@ -245,18 +257,25 @@ body {
 		line-height: 1.4;
 		padding-bottom: 50px;
 		font-weight: normal;
+		@media (max-width: 991px) {
+			font-size: 16px;
+		}
 	}
 
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: stretch;
 		justify-content: space-between;
 		padding: 0 15px 30px;
 	}
 
 	&__item {
 		width: calc(100% / 3);
-		padding: 0 0 15px;
+		padding: 0 0 30px;
+		@media (max-width: 991px) {
+			width: 50%;
+		}
 	}
 
 	&__elem {
@@ -267,6 +286,7 @@ body {
 		flex-direction: column;
 		padding-bottom: 40px;
 		transition: ease-in-out 0.2s;
+		height: 100%;
 	}
 
 	&__elem:hover {
@@ -300,6 +320,9 @@ body {
 		width: 60px;
 		font-weight: bold;
 		cursor: default;
+		@media (max-width: 991px) {
+			font-size: 18px;
+		}
 	}
 
 	&__name {
@@ -313,6 +336,9 @@ body {
 		padding-bottom: 15px;
 		align-items: flex-start;
 		padding-top: 20px;
+		@media (max-width: 991px) {
+			font-size: 22px;
+		}
 	}
 
 	&__text {
