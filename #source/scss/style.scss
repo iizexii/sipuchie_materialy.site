@@ -1,17 +1,18 @@
 @import "_reset"; //* подключение файла _reset.scss
 @import "_normalize"; //* подключение файла _normalize.scss
+@import "_slick"; //* подключение файла _slick.scss
 @import "_header"; //* подключение файла _header.scss
 @import "_footer"; //* подключение файла _footer.scss
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap");
 :root {
+	--block-width: 1200px;
+	--f-roboto: "Roboto", sans-serif;
+	--f-montserrat: "Montserrat", sans-serif;
 	--black: #262626;
 	--light-black: #333;
 	--pure-black: #212121;
 	--black-1f: #1f1f1f;
-	--f-roboto: "Roboto", sans-serif;
-	--f-montserrat: "Montserrat", sans-serif;
-	--block-width: 1200px;
 	--grey-text: rgba(51, 51, 51, 0.6);
 	--grey-05: rgba(0, 0, 0, 0.5);
 	--grey-06: rgba(0, 0, 0, 0.6);
@@ -24,74 +25,13 @@
 	--orange-40: rgba(218, 158, 50, 0.4);
 	--orange-60: rgba(218, 158, 50, 0.6);
 	--orange-80: rgba(218, 158, 50, 0.8);
-}
-
-/*slick dots + arrows*/
-.slick-dots {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	bottom: 10%;
-	position: absolute;
-}
-
-.slick-dots button {
-	display: none;
-}
-
-.slick-dots li {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background: var(--white);
-	opacity: 0.5;
-	margin: 0 2px;
-}
-
-.slick-dots li.slick-active {
-	opacity: 1;
-	background: var(--orange);
-}
-
-.slick-next,
-.slick-prev {
-	position: absolute;
-	top: calc(50% - 20px);
-	height: 40px;
-	width: 40px;
-	display: flex !important;
-	align-items: center;
-	justify-content: center;
-	z-index: 1;
-	cursor: pointer;
-}
-
-.slick-next {
-	right: 20%;
-}
-
-.slick-prev {
-	left: 20%;
-}
-
-.slick-prev img {
-	transform: scale(-1, 1);
-	margin-left: -1px;
-}
-
-.slick-next img,
-.slick-prev img {
-	width: 20px;
-	height: 20px;
-}
-
-@media (max-width: 610px) {
-	.slick-dots {
-		margin-top: 20px;
+	@media (max-width: 1199px) {
+		--block-width: 1024px;
+	}
+	@media (max-width: 1024px) {
+		--block-width: 991px;
 	}
 }
-/*END slick dots + arrows*/
 
 html {
 	scroll-behavior: smooth;
@@ -192,12 +132,89 @@ body {
 	font-weight: bold;
 	border-radius: 2px;
 	transition: ease-in-out 0.2s;
+
+	@media (max-width: 1024px) {
+		padding: 13px 20px;
+		font-size: 14px;
+	}
 }
 
 .button-link:hover {
 	background: var(--orange);
 	box-shadow: inset 0px -3px 0px var(--orange-40), 0px 5px 20px var(--orange-40);
 	transition: ease-in-out 0.2s;
+}
+
+.main-slider {
+	&__item {
+		position: relative;
+	}
+
+	&__text {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: auto;
+		inset: 0;
+		z-index: 10;
+		width: 100%;
+		max-width: 50%;
+	}
+
+	&__text-header {
+		color: var(--white);
+		margin-bottom: 10px;
+		text-align: center;
+		font-size: 40px;
+		@media (max-width: 1024px) {
+			font-size: 35px;
+		}
+	}
+
+	&__text-description {
+		text-align: center;
+		color: var(--white);
+		font-family: var(--f-montserrat);
+		color: #fff;
+		line-height: 1.4;
+		text-decoration: none;
+		font-size: 19px;
+		margin-bottom: 20px;
+		font-weight: 100;
+		letter-spacing: 1px;
+		@media (max-width: 1024px) {
+			font-size: 16px;
+		}
+	}
+
+	&__link {
+		color: var(--white);
+	}
+
+	&__img-item {
+		background: rgba(0, 0, 0, 1);
+	}
+
+	&__img {
+		opacity: 0.6;
+		object-fit: cover;
+		width: 100%;
+		max-height: 800px;
+	}
+
+	&__button {
+		background: var(--orange);
+		opacity: 0.8;
+		border-radius: 2px;
+		transition: ease-in-out 0.2s;
+	}
+
+	&__button:hover {
+		opacity: 1;
+		transition: ease-in-out 0.2s;
+	}
 }
 
 .production {
@@ -261,9 +278,6 @@ body {
 		object-fit: cover;
 		width: 100%;
 		height: 150px;
-	}
-
-	&__link {
 	}
 
 	&__number {

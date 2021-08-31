@@ -14,7 +14,7 @@
 	}
 
 	&__form-wrapper {
-		width: 45%;
+		width: 50%;
 		padding: 0 5px;
 	}
 
@@ -160,10 +160,10 @@
 		margin: 3px 0 auto;
 		font-family: var(--f-roboto);
 		color: var(--white-07);
-		font-size: 17px;
+		font-size: 13px;
 		display: flex;
 		align-items: flex-start;
-		padding-left: 30px;
+		padding: 0 15px;
 	}
 
 	&__copyright-block:last-of-type &__copyright-item {
