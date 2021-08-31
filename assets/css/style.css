@@ -964,6 +964,7 @@ template {
   --white-07: rgba(255, 255, 255, 0.7);
   --orange: #da9e32;
   --orange-40: rgba(218, 158, 50, 0.4);
+  --orange-60: rgba(218, 158, 50, 0.6);
   --orange-80: rgba(218, 158, 50, 0.8);
 }
 
@@ -1054,6 +1055,26 @@ html {
 body {
   height: 100%;
   background: var(--white-dark);
+}
+
+html,
+body {
+  scrollbar-color: var(--orange) var(--white-dark);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 8px;
+  background-color: var(--white-07);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--orange-60);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--orange);
 }
 
 .grecaptcha-badge {
