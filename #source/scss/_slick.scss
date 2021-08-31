@@ -57,8 +57,19 @@
 	height: 20px;
 }
 
-@media (max-width: 610px) {
+@media (max-width: 767px) {
 	.slick-dots {
-		margin-top: 20px;
+		bottom: 10px;
+	}
+	.slick-next {
+		right: 0%;
+	}
+	.slick-prev {
+		left: 0%;
+	}
+	.slick-next img,
+	.slick-prev img {
+		width: 15px;
+		height: 15px;
 	}
 }

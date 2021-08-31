@@ -106,24 +106,30 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-
-	@media (max-width: 991px) {
-		position: absolute;
+	@media (max-width: 767px) {
+		position: fixed;
 		top: 0;
-		right: -100vw;
-		width: 100vw;
-		height: 100vh;
-		z-index: 1;
+		left: 0;
+		z-index: 2;
+		display: block;
+		background-color: inherit;
 	}
-
 	&__wrapper {
 		width: var(--block-width);
+		@media (max-width: 767px) {
+			left: 100%;
+			position: absolute;
+			transition: ease-in-out 0.2s;
+		}
 	}
 
 	&__links-wrapper {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
+		@media (max-width: 767px) {
+			display: block;
+		}
 	}
 
 	&__link-box {
@@ -133,6 +139,9 @@
 	&__link-box::before {
 		content: "|";
 		color: var(--white);
+		@media (max-width: 767px) {
+			content: "";
+		}
 	}
 
 	&__link-box:hover &__popup-link-box {
@@ -149,6 +158,14 @@
 		text-transform: uppercase;
 		line-height: 1.4;
 		transition: ease-in-out 0.2s;
+		@media (max-width: 991px) {
+			padding: 20px 15px;
+			font-size: 12px;
+		}
+		@media (max-width: 767px) {
+			border-bottom: 1px solid var(--white-02);
+			width: 100%;
+		}
 	}
 
 	&__link:hover,
@@ -167,6 +184,12 @@
 		min-width: 300px;
 		border-top: none;
 		background-color: var(--white);
+		@media (max-width: 767px) {
+			display: block;
+			position: relative;
+			padding: 0;
+			background-color: inherit;
+		}
 	}
 
 	&__popup-link-link {
@@ -184,6 +207,16 @@
 		font-family: var(--f-roboto);
 		margin-bottom: 1px;
 		transition: ease-in-out 0.05s;
+		@media (max-width: 767px) {
+			color: var(--white);
+			background-color: var(--orange-40);
+			text-transform: uppercase;
+			font-size: 12px;
+			font-family: var(--f-roboto);
+			font-weight: bold;
+			border-bottom: 1px solid var(--white-02);
+			padding-left: 15px;
+		}
 	}
 
 	&__popup-link-link:hover {
@@ -192,55 +225,86 @@
 		transition: ease-in-out 0.05s;
 	}
 }
-
-.nav {
+.header-burger {
 	display: none;
-
-	@media (max-width: 991px) {
+}
+.overlay {
+	display: none;
+	right: 100%;
+	transition: ease-in-out 0.2s;
+}
+@media (max-width: 767px) {
+	.header-burger {
+		margin-left: auto;
+		position: relative;
+		width: 50px;
+		height: 42px;
 		display: flex;
-		width: 60px;
-		height: 60px;
-		padding: 10px;
-		position: fixed;
-		right: 0;
-		top: 0;
-		justify-content: center;
 		align-items: center;
-		flex-direction: column;
-		z-index: 11;
-		cursor: pointer;
-		background-color: var(--orange);
-	}
+		justify-content: center;
+		background: var(--orange-80);
 
-	&_active > &__line {
-		@media (max-width: 991px) {
-			&:nth-child(1) {
-				position: absolute;
-				transform: rotate(-45deg) translate(0px, -50%);
-				transition: all 0.3s ease 0s;
-				top: 60%;
-				left: 40%;
-				width: 40%;
-			}
-			&:nth-child(2) {
-				width: 0;
-			}
-			&:nth-child(3) {
-				position: absolute;
-				transform: rotate(45deg) translate(0px, 50%);
-				transition: all 0.3s ease 0s;
-				bottom: 60%;
-				left: 40%;
-				width: 40%;
-			}
+		&__line {
+			background-color: var(--white);
+			width: 60%;
+			height: 2px;
+			transition: ease-in-out 0.2s;
 		}
 	}
+	.overlay.active {
+		display: block;
+		position: absolute;
+		box-sizing: content-box;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		background: var(--black-1f);
+		opacity: 0.7;
+		filter: alpha(opacity = 50);
+		transition: ease-in-out 0.2s;
+	}
+	.header-burger:before,
+	.header-burger:after {
+		content: "";
+		background-color: var(--white);
+		position: absolute;
+		width: 60%;
+		height: 2px;
+		transition: ease-in-out 0.2s;
+	}
+	.header-burger:before {
+		top: 10px;
+		transition: ease-in-out 0.2s;
+	}
+	.header-burger:after {
+		bottom: 10px;
+		transition: ease-in-out 0.2s;
+	}
+	.header-burger.active {
+		background: var(--orange);
+	}
+	.header-burger.active:before {
+		transform: rotate(45deg);
+		top: 20px;
+		transition: ease-in-out 0.2s;
+	}
+	.header-burger.active:after {
+		transform: rotate(-45deg);
+		bottom: 20px;
+		transition: ease-in-out 0.2s;
+	}
+	.header-burger.active .header-burger__line {
+		transform: scale(0);
+		transition: ease-in-out 0.2s;
+	}
 
-	&__line {
-		width: 80%;
-		margin: 3px auto;
-		height: 5%;
-		background-color: var(--light-black);
-		transition: all 0.3s ease 0s;
+	.header-menu__wrapper.active {
+		left: 65%;
+		background: var(--black);
+		border: 1px solid var(--white-02);
+		border-bottom: 0;
+		transition: ease-in-out 0.2s;
 	}
 }

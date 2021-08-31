@@ -43,12 +43,17 @@ html {
 body {
 	height: 100%;
 	background: var(--white-dark);
+	transition: ease-in-out 0.2s;
 }
 
 html,
 body {
 	scrollbar-color: var(--orange) var(--white-dark);
 	scrollbar-width: thin;
+}
+
+body.noscroll {
+	overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -73,6 +78,7 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .main {
