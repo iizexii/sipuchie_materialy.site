@@ -43,6 +43,16 @@ $(document).ready(function () {
 		$('.header-burger, .header-menu__wrapper, .overlay').toggleClass('active');
 		$('body').toggleClass('noscroll');
 	});
+
+	$(document).mouseup(function (e) {
+		var div = $(".header-burger.active");
+		if (!div.is(e.target)
+			&& div.has(e.target).length === 0) {
+			$('.header-burger, .header-menu__wrapper, .overlay').removeClass('active');
+			$('body').removeClass('noscroll');
+		}
+	});
+
 });
 
 $(window).scroll(function () {
