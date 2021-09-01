@@ -54,8 +54,10 @@
 		@media (max-width: 991px) {
 			padding: 15px 20px 0;
 		}
-		@media (max-width: 410px) {
-			padding: 15px 0 0 0;
+		@media (max-width: 480px) {
+			width: 100%;
+			display: flex;
+			justify-content: center;
 		}
 	}
 
@@ -63,8 +65,8 @@
 		@media (max-width: 991px) {
 			align-items: flex-start;
 		}
-		@media (max-width: 410px) {
-			padding: 15px 0 0 0;
+		@media (max-width: 480px) {
+			display: none;
 		}
 	}
 
@@ -81,6 +83,12 @@
 		@media (max-width: 640px) {
 			font-size: 13px;
 		}
+		@media (max-width: 480px) {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			font-size: 15px;
+		}
 	}
 
 	&__block-bottom-p {
@@ -96,8 +104,10 @@
 		@media (max-width: 640px) {
 			font-size: 17px;
 		}
-		@media (max-width: 410px) {
-			font-size: 14px;
+		@media (max-width: 480px) {
+			width: 100%;
+			display: flex;
+			justify-content: center;
 		}
 	}
 
@@ -109,8 +119,8 @@
 		@media (max-width: 640px) {
 			font-size: 18px;
 		}
-		@media (max-width: 410px) {
-			font-size: 15px;
+		@media (max-width: 480px) {
+			font-size: 19px;
 		}
 	}
 
@@ -130,7 +140,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	@media (max-width: 767px) {
+	@media (max-width: 768px) {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -140,7 +150,7 @@
 	}
 	&__wrapper {
 		width: var(--block-width);
-		@media (max-width: 767px) {
+		@media (max-width: 768px) {
 			left: 100%;
 			position: absolute;
 			transition: ease-in-out 0.2s;
@@ -151,7 +161,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		@media (max-width: 767px) {
+		@media (max-width: 768px) {
 			display: block;
 		}
 	}
@@ -163,7 +173,7 @@
 	&__link-box::before {
 		content: "|";
 		color: var(--white);
-		@media (max-width: 767px) {
+		@media (max-width: 768px) {
 			content: "";
 		}
 	}
@@ -186,7 +196,7 @@
 			padding: 20px 15px;
 			font-size: 12px;
 		}
-		@media (max-width: 767px) {
+		@media (max-width: 768px) {
 			border-bottom: 1px solid var(--white-02);
 			width: 100%;
 		}
@@ -208,7 +218,7 @@
 		min-width: 300px;
 		border-top: none;
 		background-color: var(--white);
-		@media (max-width: 767px) {
+		@media (max-width: 768px) {
 			display: block;
 			position: relative;
 			padding: 0;
@@ -231,7 +241,7 @@
 		font-family: var(--f-roboto);
 		margin-bottom: 1px;
 		transition: ease-in-out 0.05s;
-		@media (max-width: 767px) {
+		@media (max-width: 768px) {
 			color: var(--white);
 			background-color: var(--orange-40);
 			text-transform: uppercase;
@@ -257,7 +267,7 @@
 	right: 100%;
 	transition: ease-in-out 0.2s;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 	.header-burger {
 		margin-left: auto;
 		position: relative;
