@@ -49,10 +49,10 @@ $(window).scroll(function () {
 	var offset = $('body .header').outerHeight();
 	var menuHeight = $('body .header-menu').innerHeight();
 	if ($(this).scrollTop() >= offset) {
-		$('body').css('padding-top', menuHeight);
+		$('body .wrapper').css('padding-top', menuHeight);
 		$('body .header-menu').addClass("sticky");
 	} else {
-		$('body').css('padding-top', '');
+		$('body .wrapper').css('padding-top', '');
 		$('body .header-menu').removeClass("sticky");
 	}
 });
