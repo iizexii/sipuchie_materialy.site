@@ -27,6 +27,8 @@
 	--orange-80: rgba(218, 158, 50, 0.8);
 	--fz-title: 35px;
 	--fz-descr: 18px;
+	--content-padding: 0 20px 40px;
+	--marker: "\2981";
 	@media (max-width: 1199px) {
 		--block-width: 1024px;
 	}
@@ -439,5 +441,74 @@ body.noscroll {
 
 	&__more-link:hover:after {
 		border-left: 4px solid var(--orange);
+	}
+}
+
+.content {
+	padding: var(--content-padding);
+	&__title {
+		padding-bottom: 20px;
+		box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+	}
+
+	&__text-wrapper {
+		margin: 20px 0 0 0;
+		font-family: Roboto, sans-serif;
+		color: #737373;
+		line-height: 1.6;
+		text-align: left;
+		text-decoration: none;
+		font-size: 17px;
+		display: block;
+	}
+
+	&__text-p {
+		display: block;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		@media (max-width: 768px) {
+			font-size: 0.9em;
+		}
+	}
+
+	&__text-h3 {
+		font-size: 18px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		font-weight: 900;
+		font-family: var(--f-roboto);
+		color: var(--light-black);
+	}
+
+	&__list {
+		display: block;
+		list-style-type: disc;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 2em;
+	}
+
+	&__list-item {
+		margin: 1em;
+		padding-left: 10px;
+		@media (max-width: 768px) {
+			font-size: 0.9em;
+		}
+	}
+
+	&__list-item::marker {
+		content: var(--marker);
+		font-size: inherit;
+		color: var(--light-black);
+		padding-right: 5px;
+		font-size: 1em;
+		font-weight: 700;
+	}
+
+	&__list-item-p {
 	}
 }

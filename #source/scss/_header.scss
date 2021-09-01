@@ -357,3 +357,36 @@
 		left: 50px;
 	}
 }
+
+.breadcrumbs {
+	background: var(--white-dark);
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	&__wrapper {
+		display: inline-flex;
+		width: 100%;
+		margin: 20px;
+		padding: 40px 20px 20px;
+	}
+	&__link {
+		color: var(--orange);
+		line-height: 1.2;
+		font-family: var(--f-roboto);
+		font-size: 15px;
+	}
+
+	&__link-border {
+		display: inline;
+		font-size: inherit;
+		font-weight: inherit;
+		color: var(--light-black);
+		margin: 0 5px;
+	}
+
+	&__item {
+		line-height: 1.2;
+		font-family: var(--f-roboto);
+		font-size: 15px;
+	}
+}
