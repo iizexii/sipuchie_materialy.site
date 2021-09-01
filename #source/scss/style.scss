@@ -160,6 +160,10 @@ body.noscroll {
 		padding: 10px 18px;
 		font-size: 13px;
 	}
+	@media (max-width: 610px) {
+		padding: 7px 15px;
+		font-size: 12px;
+	}
 }
 
 .button-link:hover {
@@ -208,6 +212,9 @@ body.noscroll {
 		@media (max-width: 480px) {
 			font-size: 23px;
 		}
+		@media (max-width: 410px) {
+			font-size: 20px;
+		}
 	}
 
 	&__text-description {
@@ -229,6 +236,7 @@ body.noscroll {
 		}
 		@media (max-width: 640px) {
 			margin-bottom: 10px;
+			font-size: 12px;
 		}
 	}
 
@@ -252,6 +260,10 @@ body.noscroll {
 		opacity: 0.8;
 		border-radius: 2px;
 		transition: ease-in-out 0.2s;
+
+		@media (max-width: 480px) {
+			display: none;
+		}
 	}
 
 	&__button:hover {

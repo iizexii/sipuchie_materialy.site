@@ -73,3 +73,10 @@
 		height: 15px;
 	}
 }
+@media (max-width: 480px) {
+	.slick-next img,
+	.slick-prev img {
+		width: 10px;
+		height: 10px;
+	}
+}

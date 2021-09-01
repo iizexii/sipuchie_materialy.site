@@ -17,9 +17,18 @@ $(document).ready(function () {
 		nextArrow: '<span class="slick-next"><img src="img/chevron-right_grey_grey.svg" alt="next"></span>',
 		responsive: [
 			{
-				breakpoint: 640,
+				breakpoint: 641,
 				settings: {
+					arrows: true,
 					dots: false
+				}
+			},
+			{
+				breakpoint: 411,
+				settings: {
+					arrows: false,
+					dots: false,
+					speed: 400
 				}
 			},
 		]
