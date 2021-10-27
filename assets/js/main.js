@@ -53,6 +53,60 @@ $(document).ready(function () {
 		}
 	});
 
+	//форма
+	/*let form = $('body .footer__form');
+	let formBtn = $('body .footer__form-btn');
+
+	$(document).on('click', formBtn, formSend);
+	async function formSend(e) {
+		e.preventDefault();
+		let error = formValidate(form);
+		//let formData = new FormData(form);
+
+		if (error === 0) {
+			form.classList.add('sending');
+			// let response = await fetch('sendmail.php', {
+			// 	method: 'POST',
+			// 	body: formData
+			// });
+			// if (response.ok) {
+			// 	let result = await response.json();
+			// 	alert(result.message);
+			// 	formPreview.innerHTML = '';
+			// 	form.reset();
+			// } else {
+			// 	alert('ошибка');
+			// }
+		} else {
+			//alert('заполните обязательные поля');
+		}
+	}
+
+	function formValidate(form) {
+		let error = 0;
+		let formReq = $('input[required]');
+		for (let index = 0; index < formReq.length; index++) {
+			const input = formReq[index];
+
+			formRemoveError(input);
+			if (input.value === '') {
+				console.log(error);
+				formAddError(input);
+				error++;
+			}
+		}
+		return error;
+	}
+
+	function formAddError(input) {
+		input.parentElement.classList.add('error');
+		input.classList.add('error');
+	}
+
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('error');
+		input.classList.remove('error');
+	}*/
 });
 
 $(window).scroll(function () {
@@ -66,3 +120,4 @@ $(window).scroll(function () {
 		$('body .header-menu').removeClass("sticky");
 	}
 });
+
